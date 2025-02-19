@@ -4,36 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>關於我 - 李巨川</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         body {
-            font-family: "Comic Sans MS", cursive, sans-serif;
-            background-color: #ffecb3;
+            font-family: "Pacifico", cursive;
+            background: linear-gradient(to bottom, #87CEFA, #ffffff);
             text-align: center;
             padding: 50px;
         }
         .container {
-            background: #fffaf0;
+            background: rgba(255, 255, 255, 0.8);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
             display: inline-block;
-            border: 5px dashed #ffab40;
+            border: 5px solid #1E90FF;
         }
         h1 {
-            color: #d84315;
+            color: #000000;
             font-size: 28px;
         }
         p {
             font-size: 20px;
-            color: #6d4c41;
+            color: #4682B4;
+        }
+        button {
+            font-size: 18px;
+            background-color: #1E90FF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #4682B4;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>你好，我是李巨川</h1>
-        <p>目前就讀於 <strong>中原大學</strong> 電機系碩士班。</p>
-        <p>希望能透過本堂課學習到基礎的前端開發能力。</p>
+    <div id="app" class="container">
+        <h1>{{ message }}</h1>
+        <p>{{ description }}</p>
+        <button @click="changeMessage">點我換句話！</button>
     </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: "你好，我是李巨川",
+                description: "目前就讀於 中原大學 電機系碩士班。希望能透過本堂課學習到基礎的前端開發能力。"
+            },
+            methods: {
+                changeMessage() {
+                    const messages = [
+                        "歡迎來到我的個人頁面！",
+                        "學習讓我充滿動力！",
+                        "探索前端開發的奇妙世界！",
+                        "Vue.js 讓互動更有趣！"
+                    ];
+                    this.message = messages[Math.floor(Math.random() * messages.length)];
+                }
+            }
+        });
+    </script>
 </body>
 </html>
