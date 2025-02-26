@@ -1,75 +1,60 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我 - 李巨川</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>自我介紹</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
         body {
-            font-family: "Pacifico", cursive;
-            background: linear-gradient(to bottom, #87CEFA, #ffffff);
-            text-align: center;
-            padding: 50px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
         }
         .container {
-            background: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            border: 5px solid #1E90FF;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
         }
         h1 {
-            color: #000000;
-            font-size: 28px;
+            color: #2c3e50;
         }
         p {
-            font-size: 20px;
-            color: #4682B4;
-        }
-        button {
+            line-height: 1.8;
             font-size: 18px;
-            background-color: #1E90FF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-top: 15px;
         }
-        button:hover {
-            background-color: #4682B4;
+        .info {
+            margin-top: 20px;
+        }
+        .info strong {
+            color: #34495e;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="app" class="container">
-        <h1>{{ message }}</h1>
-        <p>{{ description }}</p>
-        <button @click="changeMessage">點我換句話！</button>
+    <div class="container">
+        <h1>自我介紹</h1>
+        <img src="your-photo.jpg" alt="個人照片" class="profile-image">
+        <p>您好，我是<strong>李巨川</strong>，一位熱衷於專業發展與持續學習的個人。我擁有<strong>您的專業領域</strong>的背景，並致力於在該領域中不斷精進。</p>
+        
+        <div class="info">
+            <p><strong>學歷：</strong>中原大學電機研究所</p>
+            <p><strong>工作經歷：</strong>您的工作經歷簡述</p>
+            <p><strong>專業技能：</strong>您的技能列表</p>
+            <p><strong>聯絡方式：</strong>jerrylee1107xj@gmail.com</p>
+        </div>
     </div>
-
-    <script>
-        new Vue({
-            el: "#app",
-            data: {
-                message: "你好，我是李巨川",
-                description: "目前就讀於 中原大學 電機系碩士班。希望能透過本堂課學習到基礎的前端開發能力。"
-            },
-            methods: {
-                changeMessage() {
-                    const messages = [
-                        "歡迎來到我的個人頁面！",
-                        "學習讓我充滿動力！",
-                        "探索前端開發的奇妙世界！",
-                        "Vue.js 讓互動更有趣！"
-                    ];
-                    this.message = messages[Math.floor(Math.random() * messages.length)];
-                }
-            }
-        });
-    </script>
 </body>
 </html>
