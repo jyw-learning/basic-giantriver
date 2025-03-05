@@ -6,8 +6,9 @@ body {
   color: #333;
 }
 .container {
-  max-width: 800px;
-  margin: 50px auto;
+  width: 90%; /* 讓區塊寬度佔螢幕 90%，適應不同大小 */
+  max-width: 800px; /* 但不超過 800px */
+  margin: 50px auto; /* 讓它始終置中 */
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
