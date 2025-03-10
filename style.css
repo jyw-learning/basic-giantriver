@@ -12,6 +12,7 @@ body {
   justify-content: flex-start; /* 讓內容從上方開始，而不是完全置中 */
   min-height: 100vh; /* 讓內容至少填滿視窗 */
   padding-top: 20px; /* 避免內容緊貼視窗上方 */
+  padding-bottom: 20px; /* 增加底部間距 */
 }
 
 .container {
@@ -26,6 +27,7 @@ body {
   flex-direction: column; /* 內容垂直排列 */
   align-items: center; /* 讓內部元素也置中 */
   transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px; /* 讓 container 與底部保持距離 */
 }
 
 .container:hover {
@@ -88,11 +90,13 @@ p {
 
 /* === 響應式設計 (RWD) === */
 
-/* 當螢幕小於 600px（手機）時 */
+/* 當螢幕小於 768px（手機）時 */
 @media (max-width: 768px) {
   .container {
     width: 90%;
     padding: 15px; /* 減少內邊距，適應小螢幕 */
+    margin-left: 10px; /* 增加側邊留白 */
+    margin-right: 10px;
   }
 
   h1,
