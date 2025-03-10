@@ -25,12 +25,23 @@ body {
   display: flex;
   flex-direction: column; /* 內容垂直排列 */
   align-items: center; /* 讓內部元素也置中 */
+  transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1.02);
 }
 
 h1,
 h2 {
   color: #2c3e50;
   margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+h1:hover,
+h2:hover {
+  color: #007bff;
 }
 
 p {
@@ -48,6 +59,13 @@ p {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%; /* 讓區塊適應 container */
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.info:hover,
+.section:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
 }
 
 .info strong,
@@ -61,12 +79,17 @@ p {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
 }
 
 /* === 響應式設計 (RWD) === */
 
 /* 當螢幕小於 600px（手機）時 */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .container {
     width: 90%;
     padding: 15px; /* 減少內邊距，適應小螢幕 */
@@ -91,16 +114,5 @@ p {
   .profile-image {
     width: 120px; /* 縮小圖片 */
     height: 120px;
-  }
-}
-
-/* 當螢幕大於 1024px（桌機）時 */
-@media (min-width: 1024px) {
-  .container {
-    max-width: 900px; /* 在大螢幕時加大最大寬度 */
-  }
-
-  p {
-    font-size: 20px; /* 讓字體稍微變大，適合大螢幕閱讀 */
   }
 }
