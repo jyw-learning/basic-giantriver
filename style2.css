@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #d3d3d3;
+  color: #333;
+
+  /* 讓 .container 置中，但確保內容可滾動 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* 讓內容從上方開始，而不是完全置中 */
+  min-height: 100vh; /* 讓內容至少填滿視窗 */
+  padding-top: 20px; /* 避免內容緊貼視窗上方 */
+  padding-bottom: 20px; /* 增加底部間距 */
+}
+
+.container {
+  width: 90%; /* 讓區塊寬度佔螢幕 90%，適應不同大小 */
+  max-width: 800px; /* 但不超過 800px */
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* 內容垂直排列 */
+  align-items: center; /* 讓內部元素也置中 */
+  transition: transform 0.3s ease-in-out;
+  margin-bottom: 20px; /* 讓 container 與底部保持距離 */
+}
+
+.container:hover {
+  transform: scale(1.02);
+}
+
+h1,
+h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+h1:hover,
+h2:hover {
+  color: #007bff;
+}
+
+p {
+  line-height: 1.8;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.info,
+.section {
+  text-align: left;
+  margin-top: 30px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; /* 讓區塊適應 container */
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.info:hover,
+.section:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.info strong,
+.section strong {
+  color: #34495e;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+/* === 響應式設計 (RWD) === */
+
+/* 當螢幕小於 768px（手機）時 */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px; /* 減少內邊距，適應小螢幕 */
+    margin-left: 10px; /* 增加側邊留白 */
+    margin-right: 10px;
+  }
+
+  h1,
+  h2 {
+    font-size: 22px; /* 縮小標題字體 */
+  }
+
+  p {
+    font-size: 16px; /* 縮小文字大小，提高閱讀性 */
+    line-height: 1.6;
+  }
+
+  .info,
+  .section {
+    padding: 10px; /* 減少內邊距 */
+    margin-top: 20px; /* 減少間距 */
+  }
+
+  .profile-image {
+    width: 120px; /* 縮小圖片 */
+    height: 120px;
+  }
+}
