@@ -1,16 +1,53 @@
+/* 全頁背景與字體設定 */
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #f0f2f5; /* 淺灰背景 */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 卡片容器 */
+.container {
   text-align: center;
-  margin-top: 100px;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
 }
 
+/* 標題 */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222222;
+}
+
+/* 時鐘文字 */
 #clock {
-  font-size: 48px;
+  font-size: 56px;
+  font-weight: bold;
   margin-bottom: 30px;
+  color: #2b2b2b;
 }
 
+/* 按鈕 */
 button {
-  padding: 10px 20px;
   font-size: 18px;
+  padding: 12px 24px;
+  background-color: #4a90e2; /* 專業藍色 */
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ab7;
 }
